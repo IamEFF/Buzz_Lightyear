@@ -1,0 +1,49 @@
+﻿@page
+@model BD_Wholesale_warehouse.Pages.Product_type1.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Создать</h1>
+
+<h4>Тип товара</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Product_type.Product_type_ID" class="control-label"></label>
+                <input asp-for="Product_type.Product_type_ID" class="form-control" />
+                <span asp-validation-for="Product_type.Product_type_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product_type.Name" class="control-label"></label>
+                <input asp-for="Product_type.Name" class="form-control" />
+                <span asp-validation-for="Product_type.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product_type.Description" class="control-label"></label>
+                <input asp-for="Product_type.Description" class="form-control" />
+                <span asp-validation-for="Product_type.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product_type.Features" class="control-label"></label>
+                <input asp-for="Product_type.Features" class="form-control" />
+                <span asp-validation-for="Product_type.Features" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Вернуться</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

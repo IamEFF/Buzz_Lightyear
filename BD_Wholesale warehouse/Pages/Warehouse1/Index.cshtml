@@ -1,0 +1,130 @@
+﻿@page
+@model BD_Wholesale_warehouse.Pages.Warehouse1.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Таблица склада</h1>
+
+<p>
+    <a asp-page="Create">Добавить</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Warehouse[0].Receipt_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Warehouse[0].Order_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Warehouse[0].Departure_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Warehouse[0].Product_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Warehouse[0].Supplier_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Warehouse[0].CustomerID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Warehouse[0].Delivery_method)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Warehouse[0].Volume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Warehouse[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Warehouse[0].Staff_ID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Warehouse) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Receipt_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departure_date)
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Product.First(r => r.ID - 1 == item.ProductID).Name
+                    }
+                    catch
+                    {
+                        <p> данных нет </p>
+                    }
+                }
+
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Suppliers.First(r => r.ID - 1 == item.SupplierID).Name
+                    }
+                    catch
+                    {
+                        <p> данных нет </p>
+                    }
+                }
+
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Customers.First(r => r.ID - 1 == item.CustomerID).Name
+                    }
+                    catch
+                    {
+                        <p> данных нет </p>
+                    }
+                }
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Delivery_method)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Volume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Staff.First(r => r.ID - 3 == item.StaffID).Full_name
+                    }
+                    catch
+                    {
+                        <p> данных нет </p>
+                    }
+                }
+
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Редактировать</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробности</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

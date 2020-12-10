@@ -1,0 +1,64 @@
+﻿@page
+@model BD_Wholesale_warehouse.Pages.Suppliers1.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы уверенны?</h3>
+<div>
+    <h4>Заказчики</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Suppliers.SupplierID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Suppliers.SupplierID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Suppliers.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Suppliers.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Suppliers.Addres)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Suppliers.Addres)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Suppliers.Phone_number)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Suppliers.Phone_number)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Suppliers.ProductID1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Suppliers.ProductID1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Suppliers.ProductID2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Suppliers.ProductID2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Suppliers.ProductID3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Suppliers.ProductID3)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Suppliers.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться</a>
+    </form>
+</div>

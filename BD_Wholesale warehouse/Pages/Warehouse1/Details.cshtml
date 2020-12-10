@@ -1,0 +1,79 @@
+﻿@page
+@model BD_Wholesale_warehouse.Pages.Warehouse1.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Подробности</h1>
+
+<div>
+    <h4>Склад</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Warehouse.Receipt_date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Warehouse.Receipt_date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Warehouse.Order_date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Warehouse.Order_date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Warehouse.Departure_date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Warehouse.Departure_date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Warehouse.ProductID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Warehouse.ProductID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Warehouse.SupplierID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Warehouse.SupplierID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Warehouse.CustomerID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Warehouse.CustomerID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Warehouse.Delivery_method)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Warehouse.Delivery_method)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Warehouse.Volume)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Warehouse.Volume)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Warehouse.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Warehouse.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Warehouse.StaffID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Warehouse.StaffID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Warehouse.ID">Редактировать</a> |
+    <a asp-page="./Index">Вернуться</a>
+</div>

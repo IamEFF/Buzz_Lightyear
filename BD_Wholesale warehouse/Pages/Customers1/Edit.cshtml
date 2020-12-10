@@ -1,0 +1,65 @@
+﻿@page
+@model BD_Wholesale_warehouse.Pages.Customers1.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Редактировать</h1>
+
+<h4>Заказчики</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Customers.ID" />
+            <div class="form-group">
+                <label asp-for="Customers.CustomerID" class="control-label"></label>
+                <input asp-for="Customers.CustomerID" class="form-control" />
+                <span asp-validation-for="Customers.CustomerID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customers.Name" class="control-label"></label>
+                <input asp-for="Customers.Name" class="form-control" />
+                <span asp-validation-for="Customers.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customers.Addres" class="control-label"></label>
+                <input asp-for="Customers.Addres" class="form-control" />
+                <span asp-validation-for="Customers.Addres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customers.Phone_number" class="control-label"></label>
+                <input asp-for="Customers.Phone_number" class="form-control" />
+                <span asp-validation-for="Customers.Phone_number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customers.ProductID1" class="control-label"></label>
+                <input asp-for="Customers.ProductID1" class="form-control" />
+                <span asp-validation-for="Customers.ProductID1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customers.ProductID2" class="control-label"></label>
+                <input asp-for="Customers.ProductID2" class="form-control" />
+                <span asp-validation-for="Customers.ProductID2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customers.ProductID3" class="control-label"></label>
+                <input asp-for="Customers.ProductID3" class="form-control" />
+                <span asp-validation-for="Customers.ProductID3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Вернуться</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
