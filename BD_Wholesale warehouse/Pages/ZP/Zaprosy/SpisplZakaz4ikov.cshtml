@@ -1,0 +1,78 @@
+﻿@page
+@model BD_Wholesale_warehouse.Pages.ZP.Zaprosy.SpisplZakaz4ikov
+@{
+    <h1>Заказчики</h1>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customers[0].Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customers[0].Product_ID1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customers[0].Product_ID2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customers[0].Product_ID3)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Customers)
+            {
+                <tr>
+ 
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.Product.First(r => r.ID - 1 == item.ProductID1).Name
+                            }
+                            catch
+                            {
+                                <p> данных нет </p>
+                            }
+                        }
+
+                    </td>
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.Product.First(r => r.ID - 1 == item.ProductID2).Name
+                            }
+                            catch
+                            {
+                                <p> данных нет </p>
+                            }
+                        }
+
+                    </td>
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.Product.First(r => r.ID - 1 == item.ProductID3).Name
+                            }
+                            catch
+                            {
+                                <p> данных нет </p>
+                            }
+                        }
+
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}

@@ -1,0 +1,94 @@
+﻿@page
+@model BD_Wholesale_warehouse.Pages.ZP.Zaprosy.Zakazy
+@{
+    <h1>Таблица склада</h1>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Warehouse[0].Product_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Warehouse[0].Supplier_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Warehouse[0].CustomerID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Warehouse[0].Delivery_method)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Warehouse[0].Staff_ID)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Warehouse)
+            {
+                <tr>
+
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.Product.First(r => r.ID - 1 == item.ProductID).Name
+                            }
+                            catch
+                            {
+                                <p> данных нет </p>
+                            }
+                        }
+
+                    </td>
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.Suppliers.First(r => r.ID - 1 == item.SupplierID).Name
+                            }
+                            catch
+                            {
+                                <p> данных нет </p>
+                            }
+                        }
+
+                    </td>
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.Customers.First(r => r.ID - 1 == item.CustomerID).Name
+                            }
+                            catch
+                            {
+                                <p> данных нет </p>
+                            }
+                        }
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Delivery_method)
+                    </td>
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.Staff.First(r => r.ID - 3 == item.StaffID).Full_name
+                            }
+                            catch
+                            {
+                                <p> данных нет </p>
+                            }
+                        }
+
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}

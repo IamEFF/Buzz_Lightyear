@@ -1,0 +1,49 @@
+﻿@page
+@model BD_Wholesale_warehouse.Pages.ZP.Zaprosy.SpisokTovarov
+@{
+    <h1>Товары</h1>
+
+    <p>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Product[0].Product_type_ID)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Product[0].Name)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Product)
+            {
+            <tr>
+
+                <td>
+                    @{
+                        try
+                        {
+                            @Model.Product_type.First(r => r.ID == item.Product_typeID).Name
+                        }
+                        catch
+                        {
+                            <p> данных нет </p>
+                        }
+                    }
+
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+}

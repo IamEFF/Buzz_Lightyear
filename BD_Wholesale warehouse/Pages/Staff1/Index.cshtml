@@ -68,7 +68,7 @@
                 @{
                     try
                     {
-                        @Model.Positions.First(r => r.ID-3 == item.PositionID).Job_title
+                        @Model.Positions.First(r => r.ID == item.PositionID).Job_title
                     }
                     catch
                     {

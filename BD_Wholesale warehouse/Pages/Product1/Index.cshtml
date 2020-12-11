@@ -44,7 +44,17 @@
                 @Html.DisplayFor(modelItem => item.Product_ID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Product_typeID)
+                @{
+                    try
+                    {
+                        @Model.Product_type.First(r => r.ID == item.Product_typeID).Name
+                    }
+                    catch
+                    {
+                        <p> данных нет </p>
+                    }
+                }
+
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Manufacturer)
