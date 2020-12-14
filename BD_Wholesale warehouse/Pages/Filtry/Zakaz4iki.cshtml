@@ -1,0 +1,45 @@
+﻿@page
+@model BD_Wholesale_warehouse.Pages.Filtry.Zakaz4iki
+@{
+}
+<h1>Заказчики</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].ProductID1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].ProductID2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].ProductID3)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Customers)
+        {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductID1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductID2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductID3)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

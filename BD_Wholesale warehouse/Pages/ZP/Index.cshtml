@@ -2,15 +2,7 @@
 @model BD_Wholesale_warehouse.Pages.ZP.IndexModel
 @{
 }
-    <div class="accordion" id="accordionExample">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Запросы
-                    </button>
-                </h5>
-            </div>
+  
 
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
@@ -21,62 +13,4 @@
                     <a class="nav-link text-dark" asp-area="" asp-page="/ZP/Zaprosy/Zakazy">Заказы</a>
                 </div>
         </div>
-        <div class="card">
-            <div class="card-header" id="headingTwo">
-                <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Фильтры
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                <div class="card-body">
-                    <form>
-                        Отобразить сотрудников с должностью:
-                        <select asp-items="Model.Staff2" name="id" class="form-control-sm">
-                            <option value="-1">Должность не выбрана</option>
-                        </select>
-                        <button asp-page="Filtry/Sotrudniki" class="btn btn-primary">Отфильтровать</button>
-                    </form>
-                    <br />
-
-                    <form>
-                        Отобразить определенный тип товара:
-                        <select asp-items="Model.ProductType" name="id" class="form-control-sm">
-                            <option value="-1">Тип товара не выбран</option>
-                        </select>
-                        <button asp-page="Filtry/Tip_tovara" class="btn btn-primary">Отфильтровать</button>
-                    </form>
-                    <br />
-
-                    <form>
-                        Отобразить отдельных поставщиков:
-                        <select asp-items="Model.Postavwiki1" name="id" class="form-control-sm">
-                            <option value="-1">Поставщики не выбраны</option>
-                        </select>
-                        <button asp-page="Filtry/Postavwiki" class="btn btn-primary">Отфильтровать</button>
-                    </form>
-                    <br />
-
-                    <form>
-                        Отобразить отдельных заказчиков:
-                        <select asp-items="Model.Zakaz4iki1" name="id" class="form-control-sm">
-                            <option value="-1">Заказчики не выбраны</option>
-                        </select>
-                        <button asp-page="Filtry/Zakaz4iki" class="btn btn-primary">Отфильтровать</button>
-                    </form>
-                    <br />
-
-                    <form>
-                        Отобразить отдельные способы доставки:
-                        <select asp-items="Model.Dostavka1" name="id" class="form-control-sm">
-                            <option value="-1">Способ не выбран</option>
-                        </select>
-                        <button asp-page="Filtry/Dostavka" class="btn btn-primary">Отфильтровать</button>
-                    </form>
-                </div>
-        </div>
-        
-    </div>
-</div>
-    </div>
+      
