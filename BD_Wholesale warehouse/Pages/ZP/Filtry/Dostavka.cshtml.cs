@@ -8,20 +8,20 @@ using Microsoft.EntityFrameworkCore;
 using BD_Wholesale_warehouse.Data;
 using BD_Wholesale_warehouse.Models;
 
-namespace BD_Wholesale_warehouse.Pages.Filtry
+namespace BD_Wholesale_warehouse.Pages.ZP.Filtry
 {
-    public class Tip_tovara : PageModel
+    public class Dostavka : PageModel
     {
         private readonly BD_Wholesale_warehouse.Data.BD_Wholesale_warehouseContext _context;
 
-        public Tip_tovara(BD_Wholesale_warehouse.Data.BD_Wholesale_warehouseContext context)
+        public Dostavka(BD_Wholesale_warehouse.Data.BD_Wholesale_warehouseContext context)
         {
             _context = context;
         }
 
-        public IList<Product> Product { get; set; }
-        public Product_type Product_Type { get; set; }
-        public async Task<IActionResult> OnGetAsync(long? id)
+        public IList<Warehouse> Warehouse { get; set; }
+        public Warehouse Warehouse3 { get; set; }
+        public async Task<IActionResult> OnGetAsync(string? id)
         {
 
             if (id == null)
@@ -29,13 +29,13 @@ namespace BD_Wholesale_warehouse.Pages.Filtry
                 return NotFound();
             }
 
-            Product_Type = await _context.Product_type.FirstOrDefaultAsync(m => m.ID == id);
+            Warehouse3 = await _context.Warehouse.FirstOrDefaultAsync(m => m.Delivery_method == id);
 
-            if (Product_Type == null)
+            if (Warehouse3 == null)
             {
                 return NotFound();
             }
-            Product = await _context.Product.Where(m => m.Product_typeID == Product_Type.ID).ToListAsync();
+            Warehouse = await _context.Warehouse.Where(m => m.Delivery_method == Warehouse3.Delivery_method).ToListAsync();
             return Page();
         }
     }
